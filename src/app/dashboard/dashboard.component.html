@@ -1,0 +1,44 @@
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 600px; float: left;">
+        <h1>Aangemaakte polls</h1>
+        <h4 *ngFor="let p of polls">{{p.naam}} <button mat-raised-button color="secondary" (click)="pollStemmen(p)">Stem
+                indienen</button> | <button mat-raised-button color="primary" (click)="pollDetail(p)">Detail
+                tonen</button></h4>
+
+    </div>
+    <div>
+        <h1>Uitgenodigde polls</h1>
+        <h4 *ngFor="let u of uitgenodigdePolls">{{u.naam}} <button mat-raised-button color="primary"
+                (click)="acceptPoll(u)">Accepteren</button> | <button mat-raised-button color="warn"
+                (click)="deletePoll(u)">Afwijzen</button></h4>
+        <hr />
+    </div>
+
+</div>
+<hr />
+<button mat-raised-button color="primary" (click)="pollAanmaken()">Nieuwe poll aanmaken</button>
+<hr />
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 600px; float: left;">
+        <h1>Vriendenlijst</h1>
+        <h4 *ngFor="let v of vrienden">{{v.gebruikersnaam}}</h4>
+    </div>
+    <div>
+        <h1>Vriendschapverzoeken!</h1>
+        <ol *ngFor="let g of gebruikers">{{g.gebruikersnaam}} <button mat-raised-button color="primary"
+                (click)="addVriend(g)">Accepteren</button> | <button mat-raised-button color="warn"
+                (click)="deleteVriend(g)">Afwijzen</button></ol>
+    </div>
+
+</div>
+<hr />
+<h1>Nodig een vriend uit</h1>
+<form [formGroup]="verzoekForm" (ngSubmit)="onSubmit()">
+    <p>email:
+        <mat-form-field>
+            <input matInput type="text" formControlName="email" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Versturen</button>
+    </p>
+</form>

@@ -1,0 +1,24 @@
+<form [formGroup]="gebruikerForm" (ngSubmit)="onSubmit()">
+  
+    <p>Gebruikersnaam:
+      <mat-form-field>
+        <input matInput type="text" formControlName="gebruikersnaam" />
+      </mat-form-field>
+    </p>
+  
+    <p>Email:
+      <mat-form-field>
+        <input matInput type="text" formControlName="email" />
+      </mat-form-field>
+    </p>
+  
+    <p>Wachtwoord:
+      <mat-form-field>
+        <input matInput type="text" formControlName="wachtwoord" />
+      </mat-form-field>
+    </p>
+  
+    <p>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!gebruikerForm.valid || submitted">Registreren</button>
+    </p>
+</form>

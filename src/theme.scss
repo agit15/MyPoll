@@ -1,0 +1,2 @@
+@import '~@angular/material/theming'; //imports we need to set our custom style
+@include angular-material-theme($mypoll-app-theme); //theme object is included in the Angular Material Theme and will now be used throughout the application

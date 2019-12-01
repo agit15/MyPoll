@@ -1,0 +1,16 @@
+<h2>Login</h2>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Gebruikersnaam" type="text" [(ngModel)]="gebruikerLogin.gebruikersnaam" name="gebruikersnaam" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Wachtwoord" type="text" [(ngModel)]="gebruikerLogin.wachtwoord" name="wactwoord" />
+    </mat-form-field>
+  </p>
+  <p>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.form.valid">Inloggen</button> | <button mat-raised-button color="secondary" type="button" (click)="toRegistreren()">Registreren</button>
+  </p>
+</form>

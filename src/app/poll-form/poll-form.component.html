@@ -1,0 +1,32 @@
+<h1>Nieuwe poll aanmaken</h1>
+<form [formGroup]="pollForm" (ngSubmit)="addPoll()">
+  
+    <p>Naam:
+      <mat-form-field>
+        <input matInput type="text" formControlName="naam" />
+      </mat-form-field>
+    </p>
+  
+    <h4>Antwoorden (min. 2 antwoorden)</h4>
+    <p>Eertse antwoord:
+      <mat-form-field>
+        <input matInput type="text" formControlName="antwoord1" />
+      </mat-form-field>
+    </p>
+  
+    <p>Tweede antwoord:
+      <mat-form-field>
+        <input matInput type="text" formControlName="antwoord2" />
+      </mat-form-field>
+    </p>
+    
+    <p>Derde antwoord:
+      <mat-form-field>
+        <input matInput type="text" formControlName="antwoord3" />
+      </mat-form-field>
+    </p>
+  
+    <p>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!pollForm.valid">Poll Toevoegen</button>
+    </p>
+</form>

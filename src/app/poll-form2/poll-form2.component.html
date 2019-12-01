@@ -1,0 +1,4 @@
+<h1>Vrienden uitnodigen voor poll</h1>
+<h4 *ngFor="let v of vrienden">{{v.gebruikersnaam}} <button mat-raised-button color="primary" (click)="vriendUitnodigen(v)" [disabled]="v.disabled">Uitnodigen</button></h4>
+
+<button mat-raised-button color="primary" (click)="naarDashboard()" [disabled]="!verderGaan">Verder gaan</button>
